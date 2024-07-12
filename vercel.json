@@ -4,6 +4,10 @@
     {
       "src": "index.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "api/tasas.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
