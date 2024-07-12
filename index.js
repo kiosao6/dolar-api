@@ -9,8 +9,10 @@ app.get('/api/tasas', async (req, res) => {
   res.json(obtenerTasas())
 });
 
-app.get('/', (req, res) => {
-  res.send('Dolar API, desarrollado por Gabriel Maestre')
+app.get('/', async (req, res) => {
+  // res.send('Dolar API, desarrollado por Gabriel Maestre')
+  await actualizarTasas();
+  res.json(obtenerTasas())
 });
 
 app.listen(port, () => {
