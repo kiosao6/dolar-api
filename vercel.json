@@ -13,11 +13,27 @@
   "routes": [
     {
       "src": "/api/tasas",
-      "dest": "/api/tasas.js"
+      "dest": "/api/tasas.js",
+      "methods": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE",
+                "OPTIONS"
+            ]
     },
     {
       "src": "/",
-      "dest": "/index.js"
+      "dest": "/index.js",
+      "methods": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE",
+                "OPTIONS"
+            ]
     }
   ]
 }
