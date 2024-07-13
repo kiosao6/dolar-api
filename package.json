@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "vercel-build": "npx playwright install chromium && npx playwright install-deps && npm run build"
+    "build": "echo \"Build step\"",
+    "postinstall": "npx playwright install chromium && npx playwright install-deps"
   },
   "keywords": [],
   "author": "",
