@@ -8,7 +8,7 @@
     "dev": "nodemon index.js",
     "start": "node index.js",
     "build": "echo \"Build step\"",
-    "postinstall": "npx playwright install chromium && npx playwright install-deps"
+    "postinstall": "npx playwright install chromium && npx playwright install-deps && npm run build"
   },
   "keywords": [],
   "author": "",
