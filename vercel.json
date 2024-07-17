@@ -13,27 +13,19 @@
   "routes": [
     {
       "src": "/api/tasas",
-      "dest": "/api/tasas.js",
-      "methods": [
-                "GET",
-                "POST",
-                "PUT",
-                "PATCH",
-                "DELETE",
-                "OPTIONS"
-            ]
+      "dest": "/api/tasas.js"
     },
     {
       "src": "/",
-      "dest": "/index.js",
-      "methods": [
-                "GET",
-                "POST",
-                "PUT",
-                "PATCH",
-                "DELETE",
-                "OPTIONS"
-            ]
+      "dest": "/index.js"
     }
-  ]
+  ],
+  "env": {
+    "PLAYWRIGHT_BROWSERS_PATH": "0"
+  },
+  "build": {
+    "env": {
+      "PLAYWRIGHT_BROWSERS_PATH": "0"
+    }
+  }
 }

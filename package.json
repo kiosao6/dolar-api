@@ -8,14 +8,14 @@
     "dev": "nodemon index.js",
     "start": "node index.js",
     "build": "echo \"Build step\"",
-    "postinstall": "npx playwright install chromium && npx playwright install-deps && npm run build"
+    "postinstall": "npx playwright install chromium"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
-    "playwright": "^1.45.1"
+    "playwright": "^1.45.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
