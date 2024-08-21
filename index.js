@@ -1,39 +1,22 @@
 const express  = require('express');
+const axios = require('axios')
 const app = express();
 const port = 3000;
 
-
-let tasas = [
-  {
-    tasa: 'bcv',
-    monto: 0,
-    ultimaActualizacion: ''
-  },
-
-  {
-    tasa: 'monitor',
-    monto: 0,
-    ultimaActualizacion: ''
-  },
-]
-
-let text;
-
-const actualizarTasas = async () => {
+app.get('/api/tasas', async (req, res) => {
   try {
-
-    // Ir a la web y recuperar la data
-    
+    const response = await axios.get('http://pydolarve.org/api/v1/dollar');
+    res.json(response.data);
   } catch (error) {
-    console.log(error)
+    console.error('Error details:', error); // Añadir más detalles del error
+    res.status(500).json({ 
+      message: 'Error fetching data', 
+      error: error.message,
+      config: error.config
+    });
   }
-}
+});
 
-actualizarTasas();
-
-// app.get('/api/tasas', (req, res) => {
-//   res.json(tasas)
-// });
 
 app.get('/', (req, res) => {
   res.send('hola mundo')
@@ -41,5 +24,4 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Escuchando en el puerto ${port}`)
-  console.log(text)
 })
